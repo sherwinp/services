@@ -1,0 +1,37 @@
+@CHARSET "UTF-8";
+body
+{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+img { border:0;}
+
+div.headerBar
+{
+    background-color: #001E59;
+}
+div#main
+{
+    font: 12pt arial, verdana, sans-serif;
+    height: 26em;
+}
+div.navigation
+{
+    float: left;
+    margin: 0em 1em 0em  1em;
+    width: 14em;
+    height: 25em;
+}
+div.navigation ul li
+{
+    list-style-type: square;
+    height: 1.6em;
+}
+div.content{
+	
+}
+#footerDiv{
+    text-align: center;
+    clear:both;
+}
