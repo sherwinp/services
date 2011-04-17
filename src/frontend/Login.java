@@ -1,17 +1,24 @@
 package frontend;
 
+import java.util.Date;
+
 import org.apache.wicket.PageParameters;
-import org.apache.wicket.Session;
-import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.Response;
+import org.apache.wicket.markup.html.link.Link;
+import org.apache.wicket.markup.html.pages.RedirectPage;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.PasswordTextField;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.Model;
+import org.apache.wicket.request.target.basic.RedirectRequestTarget;
 
-import javax.security.auth.*;
+import org.apache.wicket.Request;
+import org.apache.wicket.authentication.AuthenticatedWebSession;
+import org.apache.wicket.authorization.strategies.role.Roles;
+
 
 public class Login extends BasePage {
-  private TextField userIdField;
+  private TextField<String> userIdField;
   private PasswordTextField passField;
   private Form form;
 
@@ -20,9 +27,10 @@ public class Login extends BasePage {
     	 * The first parameter to all Wicket component constructors is
     	 * the same as the ID that is used in the template
     	 */
-
-    	    userIdField = new TextField<String>("userId", new Model(""));
-    	    passField = new PasswordTextField("password", new Model(""));
+    	final Date firstVisitTime = new Date();
+	    	
+    	    userIdField = new TextField<String>("userId", new Model<String>(""));
+    	    passField = new PasswordTextField("password", new Model<String>(""));
 
     	    /* Make sure that password field shows up during page re-render **/
 
@@ -48,7 +56,8 @@ public class Login extends BasePage {
         String password = Login.this.passField.getDefaultModelObjectAsString();
         System.out.println("You entered User id " + userId + " and Password " + password);
        
-        setResponsePage(HomePage.class);
+        getRequestCycle().setRequestTarget(new RedirectRequestTarget("secured"));
+
       }
     }	
 	

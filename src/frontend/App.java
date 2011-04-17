@@ -5,6 +5,9 @@ import org.apache.wicket.util.lang.PackageName;
 
 public class App extends WebApplication {
 
+	public App(){
+		super();
+	}
 	@Override
 	public Class<? extends BasePage> getHomePage()
 	{
@@ -13,7 +16,7 @@ public class App extends WebApplication {
 
 	@Override protected void init() {
 		super.init();
-		//mount( "web", PackageName.forClass(BasePage.class));
+		mount( "web", PackageName.forClass(HomePage.class));
 	}
 
 }
