@@ -1,12 +1,14 @@
 package frontend;
 
 import org.apache.wicket.PageParameters;
+import org.apache.wicket.Session;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.PasswordTextField;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.Model;
 
+import javax.security.auth.*;
 
 public class Login extends BasePage {
   private TextField userIdField;
@@ -45,7 +47,8 @@ public class Login extends BasePage {
         String userId = Login.this.userIdField.getDefaultModelObjectAsString();
         String password = Login.this.passField.getDefaultModelObjectAsString();
         System.out.println("You entered User id " + userId + " and Password " + password);
-        
+       
+        setResponsePage(HomePage.class);
       }
     }	
 	

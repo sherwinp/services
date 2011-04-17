@@ -13,7 +13,7 @@ public class App extends WebApplication {
 
 	@Override protected void init() {
 		super.init();
-		mount( "web", PackageName.forClass(BasePage.class));
+		//mount( "web", PackageName.forClass(BasePage.class));
 	}
 
 }

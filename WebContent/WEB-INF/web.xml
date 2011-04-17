@@ -27,7 +27,7 @@
         <filter-name>App</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-        <filter-mapping>
+    <filter-mapping>
         <filter-name>SecureApp</filter-name>
         <url-pattern>/secure/*</url-pattern>
     </filter-mapping>
@@ -35,4 +35,30 @@
   <welcome-file-list>
     <welcome-file>HomePage.html</welcome-file>
   </welcome-file-list>
+  
+  <login-config>
+  	  <auth-method>FORM</auth-method>
+  	  <form-login-config>
+  	  		<form-login-page>/frontend/Login.html</form-login-page>
+  	  		<form-error-page>/Login.html</form-error-page>
+  	  </form-login-config>
+  </login-config>
+  
+  <security-constraint>
+  <web-resource-collection>
+    <web-resource-name>secure</web-resource-name>
+    <url-pattern>/secure/*</url-pattern>
+    
+      <http-method>DELETE</http-method>
+      <http-method>PUT</http-method>
+      <http-method>HEAD</http-method>
+      <http-method>OPTIONS</http-method>
+      <http-method>TRACE</http-method>
+      <http-method>GET</http-method>
+      <http-method>POST</http-method>
+  </web-resource-collection>
+  <auth-constraint>
+    <role-name>AuthenticatedUsers</role-name>
+  </auth-constraint>
+  </security-constraint>
 </web-app>
