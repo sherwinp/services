@@ -39,7 +39,7 @@
   <login-config>
   	  <auth-method>FORM</auth-method>
   	  <form-login-config>
-  	  		<form-login-page>/frontend/Login.html</form-login-page>
+  	  		<form-login-page>/Login.html</form-login-page>
   	  		<form-error-page>/Login.html</form-error-page>
   	  </form-login-config>
   </login-config>
