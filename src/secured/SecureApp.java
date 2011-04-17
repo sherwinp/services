@@ -3,7 +3,6 @@ package secured;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.util.lang.PackageName;
 
-import frontend.Bulletins;
 
 public class SecureApp extends WebApplication {
 
