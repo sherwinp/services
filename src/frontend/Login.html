@@ -6,6 +6,16 @@
 <title>DRAFT: - FILING INFORMATION RETURNS ELECTRONICALLY</title>
 <link rel="shortcut icon" href="favicon.ico" />
 <link href="style/styles.css" type="text/css" rel="stylesheet" />
+<style>
+	label { 
+	float: left; 
+	width: 9em;
+  	margin-right:0.5em;
+  	padding-top:0.2em;
+  	text-align:right;
+  	font-weight:bold;
+	}
+</style>
 </head>
 <body>
 <div id="main">
@@ -19,13 +29,17 @@
 </div>
 <div class="content">
     <form wicket:id="loginForm">
-           <p>Login</p>
+    	<fieldset>
+           <legend>Login</legend>
            <p>
            	<label for="userId">User Name:</label><input type="text" name="userId" wicket:id="userId"/>
-           	<br/><label for="password">Password:</label><input type="password" name="password" wicket:id="password"/>
            </p>
-           <hr/>
+           <p>
+           	<label for="password">Password:</label><input type="password" name="password" wicket:id="password"/>
+           </p>
+           
            <p><input type="submit" value="Login"/></p>
+           </fieldset>
     </form>
 </div>
 </div>
